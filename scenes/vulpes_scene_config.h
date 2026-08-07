@@ -1,0 +1,6 @@
+ADD_SCENE(vulpes, start, Start)
+ADD_SCENE(vulpes, survey, Survey)
+ADD_SCENE(vulpes, hunt, Hunt)
+ADD_SCENE(vulpes, bearing, Bearing)
+ADD_SCENE(vulpes, settings, Settings)
+ADD_SCENE(vulpes, about, About)

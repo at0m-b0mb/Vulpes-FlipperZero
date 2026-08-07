@@ -1,0 +1,23 @@
+App(
+    appid="vulpes",
+    name="Vulpes",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="vulpes_app",
+    stack_size=4 * 1024,
+    fap_category="Sub-GHz",
+    fap_icon="icons/vulpes_10px.png",
+    fap_icon_assets="icons",
+    fap_author="at0m-b0mb",
+    fap_weburl="https://github.com/at0m-b0mb/Vulpes-FlipperZero",
+    fap_version="1.0",
+    # Explicit, so the recursive default does not sweep test/ (host-only code)
+    # into the firmware build.
+    sources=[
+        "vulpes.c",
+        "helpers/*.c",
+        "views/*.c",
+        "scenes/*.c",
+    ],
+    fap_description="RF bug and tracker direction-finder. Survey sweeps the Sub-GHz bands with the internal CC1101 and max-holds across passes so even a beacon that speaks for 40 ms once a second gets caught, then lists what is actually transmitting near you. Lock a signal and Hunt turns the Flipper into a hot-and-cold detector: COLD to ON TOP as you close in, a warmer/colder verdict fitted over the last 0.6 s rather than guessed from two samples, rising clicks so you can search with your eyes up, and an offset attenuator that keeps the reading alive in the last few metres where a plain RSSI meter pegs and goes blind. Bearing turns your own body into the shielded antenna: hold it to your chest, turn a slow circle, and the rose shows which way was loudest - or admits the room is too reflective to say. It also tells you what kind of emitter it found, continuous carrier or clockwork beacon or human-driven traffic, so a neighbour's weather station does not read as a bug. Listen-only, never transmits.",
+    requires=["gui"],
+)
